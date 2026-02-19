@@ -40,3 +40,8 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
