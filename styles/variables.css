@@ -18,4 +18,5 @@
   --line-height-base: 1.3;
   --selection-bg: #FF0070;
   --selection-text: #000028;
+  --container-gutter: 10px;
 }

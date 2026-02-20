@@ -28,6 +28,7 @@
   </div> -->
 
   <header class="header decorated-zone">
+    <div class="header__background" aria-hidden="true"></div>
     <span class="header__badge" aria-hidden="true">REC</span>
     <nav class="header__theme-menu">
       <ul class="header__theme-menu-list">
@@ -42,13 +43,11 @@
         </li>
       </ul>
     </nav>
-    <div class="header__content">
-      <h1 class="header__title">no focus</h1>
-      <p class="header__intro">
-        Что делать, когда не можешь делать ничего <br>
-        Или почему нам так сложно сконцентрироваться, особенно когда очень надо
-      </p>
-    </div>
+    <h1 class="header__title">no focus</h1>
+    <p class="header__intro">
+      Что делать, когда не можешь делать ничего <br>
+      Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+    </p>
   </header>
 
   <main class="content-container">
@@ -122,11 +121,36 @@
     <section class="gallery">
       <h2 class="gallery__title">А можно в картинках?</h2>
       <div class="gallery__grid">
-        <img src="./images/sunset.png" alt="Закат" loading="lazy">
-        <img src="./images/ice-cream.png" alt="Мороженое" loading="lazy">
-        <img src="./images/tape.png" alt="Аудиокассета" loading="lazy">
-        <img src="./images/books.png" alt="Стопка книг" loading="lazy">
-        <img src="./images/street.png" alt="Улица" loading="lazy">
+        <img
+          src="./images/sunset.png"
+          alt="Закат"
+          class="gallery__image_sunset"
+          loading="lazy"
+        >
+        <img
+          src="./images/ice-cream.png"
+          alt="Мороженое"
+          class="gallery__image_icecream"
+          loading="lazy"
+        >
+        <img
+          src="./images/tape.png"
+          alt="Аудиокассета"
+          class="gallery__image_tape"
+          loading="lazy"
+        >
+        <img
+          src="./images/books.png"
+          alt="Стопка книг"
+          class="gallery__image_books"
+          loading="lazy"
+        >
+        <img
+          src="./images/street.png"
+          alt="Улица"
+          class="gallery__image_street"
+          loading="lazy"
+        >
       </div>
     </section>
   </main>
