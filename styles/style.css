@@ -1,14 +1,12 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page у тега body.
   Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   position: relative;
-  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--text-color);
+  background-color: var(--bg-color);
   min-block-size: 100vh;
 }
 
@@ -22,6 +20,7 @@
   background: url("../pixelperfect/375 x 668 - dark.png") repeat-y top left / 375px auto;
   background: url("../pixelperfect/768 x 1024 - dark.png") repeat-y top left / 768px auto;
   background: url("../pixelperfect/1024 x 768 - dark.png") repeat-y top left / 1024px auto;
+  background: url("../pixelperfect/375 x 668 - light.png") repeat-y top left / 375px auto;
   opacity: 0.5;
   pointer-events: none;
   z-index: 9999;
@@ -34,11 +33,11 @@
 
 .decorated-zone::before,
 .decorated-zone::after {
-  content: '';
+  content: "";
   position: absolute;
+  border: 1px solid var(--accent-color);
   inline-size: 25px;
   block-size: 25px;
-  border: 1px solid var(--accent-color);
 }
 
 .decorated-zone::before {
@@ -57,41 +56,41 @@
 
 /* Header */
 .header {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   padding: var(--container-gutter);
-  position: relative;
   container-type: inline-size;
 }
 
 .header__background {
   position: absolute;
   inset: 0;
-  background: var(--bg-image) center/cover no-repeat;
   z-index: -2;
+  background: var(--bg-image) center/cover no-repeat;
   pointer-events: none;
 }
 
 .header__title {
   grid-row: 2;
-  align-self: center;
   justify-self: start;
+  align-self: center;
   max-width: 800px;
-  font-size: var(--font-size-huge);
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--shadow-color);
+  font-size: var(--font-size-huge);
   line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 .header__intro {
   grid-row: 3;
-  align-self: center;
   justify-self: end;
+  align-self: center;
   max-width: 600px;
-  background-color: var(--intro-bg);
-  color: var(--intro-text);
+  color: var(--intro-text-color);
   font-weight: bold;
+  background-color: var(--intro-bg-color);
 }
 
 /* Decorative element REC */
@@ -100,20 +99,20 @@
   top: var(--container-gutter);
   right: calc(var(--container-gutter) + 10px);
   display: var(--badge-display, flex);
-  color: var(--accent-color);
+  color: var(--button-color);
   line-height: 1.5;
   text-transform: uppercase;
 }
 
 .header__badge::after {
-  content: '';
+  content: "";
   display: inline-block;
+  margin-inline-start: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--button-color);
+  background-color: var(--button-color);
   inline-size: 9px;
   block-size: 9px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  margin-inline-start: 10px;
-  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 /* Navigation menu */
@@ -125,32 +124,34 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 10px;
   list-style: none;
-  align-items: flex-end;
 }
 
 /* Menu buttons */
 .header__theme-menu-button {
-  background: transparent;
   border: 1px solid transparent;
   padding: 1px 12px 4.5px;
-  cursor: pointer;
-  color: var(--accent-color);
+  color: var(--button-color);
   font-family: inherit;
   font-size: inherit;
   line-height: 1;
   text-transform: lowercase;
-  transition: color 0.2s, border-color 0.2s;
+  background: transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
-  border-color: currentColor;
+  border-color: color-mix(in srgb, currentColor 40%, transparent);
 }
 
 .header__theme-menu-button:focus-visible {
   border-color: transparent;
-  border-bottom-color: currentColor;
+  border-bottom-color: color-mix(in srgb, currentColor 40%, transparent);
   outline: none;
 }
 
@@ -172,9 +173,9 @@
 }
 
 .content-section__title {
-  color: var(--accent-color);
-  font-size: inherit;
+  color: var(--section-title-color);
   font-weight: bold;
+  font-size: inherit;
   background-color: transparent;
 }
 
@@ -190,11 +191,11 @@
 }
 
 .card__title {
-  background-color: var(--accent-color);
-  color: var(--intro-text);
-  font-size: inherit;
-  font-weight: bold;
   display: block;
+  color: var(--intro-text-color);
+  font-weight: bold;
+  font-size: inherit;
+  background-color: var(--intro-bg-color);
 }
 
 .card__subtitle {
@@ -227,11 +228,11 @@
 }
 
 .gallery__title {
-  background-color: var(--accent-color);
-  color: var(--intro-text);
-  font-size: inherit;
-  font-weight: bold;
   display: inline-block;
+  color: var(--intro-text-color);
+  font-weight: bold;
+  font-size: inherit;
+  background-color: var(--intro-bg-color);
 }
 
 .gallery__grid {
@@ -240,26 +241,26 @@
 }
 
 .gallery__grid img {
+  object-fit: cover;
   inline-size: 100%;
   block-size: auto;
-  object-fit: cover;
 }
 
 /* Footer */
 .footer {
-  min-block-size: 100vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   background: var(--bg-image) center/cover no-repeat;
+  min-block-size: 100vh;
 }
 
 .footer__title {
-  font-size: var(--font-size-huge);
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--shadow-color);
+  font-size: var(--font-size-huge);
   line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 /* Tablet */
@@ -284,8 +285,8 @@
 
   .content-section {
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 2fr;
+    gap: 20px;
   }
 
   .content-section:nth-child(odd) {
@@ -293,7 +294,7 @@
   }
 
   .content-section:nth-child(even) {
-    grid-template-areas: 
+    grid-template-areas:
       "title ."
       "cards cards";
   }
@@ -358,9 +359,9 @@
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
     list-style: none;
-    justify-content: center;
   }
 
   .content-section {
@@ -368,8 +369,8 @@
   }
   .content-section:nth-child(even) {
     grid-template-areas:
-    "title . ."
-    "cards cards cards";
+      "title . ."
+      "cards cards cards";
   }
 
   .content-section:nth-child(odd) {
