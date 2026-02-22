@@ -311,8 +311,13 @@
   .gallery__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    aspect-ratio: 1 / 1;
+    grid-template-rows: repeat(2, 1fr) auto;
+    width: 100%;
+  }
+
+  .gallery__grid > * {
+    min-height: 0;
+    min-width: 0;
   }
 
   .gallery__grid img {
