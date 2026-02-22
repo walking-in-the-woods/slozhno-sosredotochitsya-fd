@@ -21,6 +21,7 @@
   height: 100%;
   background: url("../pixelperfect/375 x 668 - dark.png") repeat-y top left / 375px auto;
   background: url("../pixelperfect/768 x 1024 - dark.png") repeat-y top left / 768px auto;
+  background: url("../pixelperfect/1024 x 768 - dark.png") repeat-y top left / 1024px auto;
   opacity: 0.5;
   pointer-events: none;
   z-index: 9999;
@@ -77,7 +78,7 @@
   align-self: center;
   justify-self: start;
   max-width: 800px;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--font-size-huge);
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--shadow-color);
   line-height: 0.825;
@@ -178,13 +179,13 @@
 }
 
 .card-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
 }
 
 .card {
   display: grid;
+  grid-template-rows: min-content auto;
   gap: 10px;
 }
 
@@ -196,7 +197,7 @@
   display: block;
 }
 
-.card__title_regular {
+.card__subtitle {
   font-weight: normal;
 }
 
@@ -255,26 +256,25 @@
 }
 
 .footer__title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--font-size-huge);
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--shadow-color);
   line-height: 0.825;
 }
 
-@container (min-width: 400px) {
+/* Tablet */
+@media (width >= 700px) {
+  :root {
+    --container-gutter: 20px;
+    --font-size-huge: 120px;
+  }
+
   .header__title {
     margin-left: calc(var(--container-gutter) * -1);
   }
 
   .header__intro {
     width: 50%;
-  }
-}
-
-/* Tablet */
-@media (width >= 768px) {
-  :root {
-    --container-gutter: 20px;
   }
 
   .content-container {
@@ -346,8 +346,45 @@
 }
 
 /* Desktop */
-/* @media (width >= 1024px) {
-  .header {
-    --container-gutter: 20px;
+@media (width >= 1000px) {
+  :root {
+    --font-size-huge: 157px;
   }
-} */
+
+  .header__theme-menu {
+    align-self: self-start;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    justify-content: center;
+  }
+
+  .content-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .content-section:nth-child(even) {
+    grid-template-areas:
+    "title . ."
+    "cards cards cards";
+  }
+
+  .content-section:nth-child(odd) {
+    grid-template-areas: "title cards cards";
+  }
+
+  .content-section:nth-child(odd) .card-list .card {
+    grid-column: auto / span 3;
+  }
+
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card__group-title {
+    grid-column: auto / span 3;
+  }
+}
