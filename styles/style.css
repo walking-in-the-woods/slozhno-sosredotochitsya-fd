@@ -16,15 +16,15 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 100%;
   height: 100%;
+  opacity: 0.5;
   background: url("../pixelperfect/375 x 668 - dark.png") repeat-y top left / 375px auto;
   background: url("../pixelperfect/768 x 1024 - dark.png") repeat-y top left / 768px auto;
   background: url("../pixelperfect/1024 x 768 - dark.png") repeat-y top left / 1024px auto;
   background: url("../pixelperfect/375 x 668 - light.png") repeat-y top left / 375px auto;
-  opacity: 0.5;
   pointer-events: none;
-  z-index: 9999;
 } */
 
 /* Corner decorations */
