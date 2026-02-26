@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
     <!-- Scripts -->
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/script.js" defer></script>
   </head>
   <body class="page">
     <!-- <div
@@ -28,7 +28,6 @@
     </div> -->
 
     <header class="header decorated-zone">
-      <div class="header__background" aria-hidden="true"></div>
       <span class="header__badge" aria-hidden="true">REC</span>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
@@ -65,7 +64,7 @@
 
     <main class="content-container">
       <!-- Section 1: Почему сосредоточиться так сложно -->
-      <section class="content-section">
+      <section class="content-section content-section-offset">
         <h2 class="content-section__title">
           Почему сосредоточиться так сложно
         </h2>
@@ -87,22 +86,21 @@
           <article class="card">
             <h3 class="card__title">Дофамин</h3>
             <p class="card__text">
-              С гормонами стресса всё понятно, но дальше — ещё интереснее.
-              В нашей невозможности сосредоточиться замешана и
-              полная противоположность стрессу — дофамин.
-              Это вещество участвует в системе вознаграждения мозга.
-              Причём тут он? Мы часто отвлекаемся от важной задачи на что-то
-              более «приятное» для мозгов. Например, смотрим лайки в соцсетях.
-              В это время и выделяется дофамин — и мы чувствуем удовольствие.
-              Получается замкнутый круг: чем больше отвлекаешься,
-              тем больше удовольствия получаешь.
+              С гормонами стресса всё понятно, но дальше — ещё интереснее. В
+              нашей невозможности сосредоточиться замешана и полная
+              противоположность стрессу — дофамин. Это вещество участвует в
+              системе вознаграждения мозга. Причём тут он? Мы часто отвлекаемся
+              от важной задачи на что-то более «приятное» для мозгов. Например,
+              смотрим лайки в соцсетях. В это время и выделяется дофамин — и мы
+              чувствуем удовольствие. Получается замкнутый круг: чем больше
+              отвлекаешься, тем больше удовольствия получаешь.
             </p>
           </article>
         </div>
       </section>
 
       <!-- Section 2: Что снижает концентрацию внимания? -->
-      <section class="content-section">
+      <section class="content-section content-section-full-size">
         <h2 class="content-section__title">
           Что снижает концентрацию внимания?
         </h2>
@@ -145,7 +143,7 @@
       </section>
 
       <!-- Section 3: Как концентрироваться лучше... -->
-      <section class="content-section">
+      <section class="content-section content-section-offset">
         <h2 class="content-section__title">
           Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх
           секунд)
@@ -155,9 +153,9 @@
             5 простых (на самом деле не очень) советов
           </h3>
           <article class="card">
-            <h3 class="card__title card__subtitle">
+            <h4 class="card__title card__subtitle">
               Представьте небо и облака
-            </h3>
+            </h4>
             <p class="card__text">
               Или листья в ручье. Тут дело в лёгкой медитации, которая помогает
               успокоиться. Ведь часто именно тревожные мысли о сложных задачах
@@ -170,7 +168,7 @@
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title card__subtitle">Включите музыку</h3>
+            <h4 class="card__title card__subtitle">Включите музыку</h4>
             <p class="card__text">
               Но не любую, и не любимую. Любимая может быть связана с сильными
               положительными эмоциями, которые тоже очень сильно отвлекают.
@@ -179,7 +177,7 @@
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title card__subtitle">Прогуляйтесь</h3>
+            <h4 class="card__title card__subtitle">Прогуляйтесь</h4>
             <p class="card__text">
               Или даже пробегитесь. Лучше найти парк или лес: один эксперимент
               <a href="#" class="link">показал</a>, что созерцание природы
@@ -191,7 +189,7 @@
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title card__subtitle">Хорошо ешьте</h3>
+            <h4 class="card__title card__subtitle">Хорошо ешьте</h4>
             <p class="card__text">
               Мы — не ваша бабушка, но это правда важно. Выбирайте продукты,
               которые препятствуют резким скачкам сахара в крови. Например, с
@@ -200,7 +198,7 @@
             </p>
           </article>
           <article class="card">
-            <h3 class="card__title card__subtitle">Читайте</h3>
+            <h4 class="card__title card__subtitle">Читайте</h4>
             <p class="card__text">
               Настоящие бумажные книги. Это правда помогает с концентрацией:
               чтобы прочитать пост в соцсети, достаточно нескольких минут или
@@ -213,39 +211,49 @@
 
       <!-- Gallery -->
       <section class="gallery">
-        <h2 class="gallery__title">А можно в картинках?</h2>
-        <div class="gallery__grid">
-          <img
-            src="./images/sunset.png"
-            alt="Закат"
-            class="gallery__image_sunset"
-            loading="lazy"
-          />
-          <img
-            src="./images/ice-cream.png"
-            alt="Мороженое"
-            class="gallery__image_icecream"
-            loading="lazy"
-          />
-          <img
-            src="./images/tape.png"
-            alt="Аудиокассета"
-            class="gallery__image_tape"
-            loading="lazy"
-          />
-          <img
-            src="./images/books.png"
-            alt="Стопка книг"
-            class="gallery__image_books"
-            loading="lazy"
-          />
-          <img
-            src="./images/street.png"
-            alt="Улица"
-            class="gallery__image_street"
-            loading="lazy"
-          />
-        </div>
+        <h2 class="card__title">А можно в картинках?</h2>
+        <ul class="gallery__grid">
+          <li class="gallery__grid_item gallery__image_sunset">
+            <img
+              src="./images/sunset.png"
+              alt="Закат"
+              class="gallery__image"
+              loading="lazy"
+            />
+          </li>
+          <li class="gallery__grid_item gallery__image_icecream">
+            <img
+              src="./images/ice-cream.png"
+              alt="Мороженое"
+              class="gallery__image"
+              loading="lazy"
+            />
+          </li>
+          <li class="gallery__grid_item gallery__image_tape">
+            <img
+              src="./images/tape.png"
+              alt="Аудиокассета"
+              class="gallery__image"
+              loading="lazy"
+            />
+          </li>
+          <li class="gallery__grid_item gallery__image_books">
+            <img
+              src="./images/books.png"
+              alt="Стопка книг"
+              class="gallery__image"
+              loading="lazy"
+            />
+          </li>
+          <li class="gallery__grid_item gallery__image_street">
+            <img
+              src="./images/street.png"
+              alt="Улица"
+              class="gallery__image"
+              loading="lazy"
+            />
+          </li>
+        </ul>
       </section>
     </main>
 
